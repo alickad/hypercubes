@@ -120,6 +120,11 @@ def getTrueColors(result):
             red.append([u, v])
     return red
 
+def write_red_edges(redEdges):
+    with open("red_edges.txt", "w") as file:
+        for edge in redEdges:
+            file.write(str(edge[0]) + " " + str(edge[1]) + "\n")
+
 
 if __name__ == "__main__":
 
@@ -175,5 +180,6 @@ if __name__ == "__main__":
         redEdges = getTrueColors(result)
         print("red edges")
         print(*redEdges)
+        write_red_edges(redEdges)
         print("the rest is blue")
   
