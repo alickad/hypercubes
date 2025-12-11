@@ -58,10 +58,7 @@ def V(v, color, start):
 MAX_V = V(NUM_OF_VERTICES - 1, "blue", 1)
 
 def anti(u):
-    v = 0
-    for i in range(DIMENSION):
-        v += (1 ^ ((u >> i) - ((u >> (i+1)) << 1))) << i
-    return int(v)
+    return int(NUM_OF_VERTICES - 1 - u)
 
 def antipodalLogic():
     logic = []
@@ -176,10 +173,11 @@ if __name__ == "__main__":
         print("There is no antipodal coloring with a bad square in a cube with dimension", DIMENSION)
     
     else:
-        print("the following coloring makes a bad square 0, 1, 2, 3:")
+        #print("the following coloring makes a bad square 0, 1, 2, 3:")
         redEdges = getTrueColors(result)
-        print("red edges")
-        print(*redEdges)
+        #print("red edges")
+        #print(*redEdges)
         write_red_edges(redEdges)
-        print("the rest is blue")
+        #print("the rest is blue")
+        print("There is an antipodal coloring with a bad square in a cube with dimension", DIMENSION)
   
